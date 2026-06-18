@@ -7,18 +7,20 @@ This repository contains the deployment definition of the dependency tracker ser
 This deploys the Dependency Track API server into the platform premise, and the UI on the edge.
 It relies on an ingress router and a database in the data plane.
 
-[puml-c4]
+[plantuml]
 ----
-User -> UI
+@startuml
+User -> UI : Use the UI
+@enduml
 ----
 
 == Notes
 
 . Requires KEK to be shared across all instances. Generate once and share. Added to `vault kv get -format=json hashiatho.me-v2/security_plane/deptrack/secret_management_kek`
 
+. The key needs to be placed in the defined source directory by a Vault lookup, and allow the deployment to fail if not found.
+
 [console]
 ----
 2026-06-16 14:02:44,472 INFO [DatabaseSecretManager] KEK keyset at /data/.dependency-track/keys/secret-management-kek.json does not exist yet; Creating it
 ----
-
-The key needs to be placed in the defined source directory by a Vault lookup, and allow the deployment to fail if not found.
