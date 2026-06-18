@@ -18,14 +18,14 @@ It relies on an ingress router and a database in the data plane.
 [{MERMAID}]
 ....
 graph LR
-    A["External Client<br/>sms.brusisceddu.xyz"] -->|HTTPS| B["Cloudflare Tunnel<br/>Connector"]
+    A["External Client"] -->|HTTPS| B["Cloudflare Tunnel<br/>Connector"]
     B -->|HTTP| C["Traefik<br/>traefik.service.consul:8080"]
-    C -->|Routes| D["Internal Services<br/>/deptrack/api etc"]
+    C -->|Routes| D["Internal Services<br/>/deptrack-api"]
 
-    style A fill:#e1f5ff
-    style B fill:#fff3e0
-    style C fill:#f3e5f5
-    style D fill:#e8f5e9
+    // style A fill:#e1f5ff
+    // style B fill:#fff3e0
+    // style C fill:#f3e5f5
+    // style D fill:#e8f5e9
 ....
 
 == Notes
