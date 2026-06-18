@@ -1,4 +1,10 @@
 = Dependency Tracker deployment
+ifdef::env-github[]
+:MERMAID: source, mermaid
+endif::[]
+ifndef::env-github[]
+:MERMAID: mermaid
+endif::[]
 
 This repository contains the deployment definition of the dependency tracker service in the security plane of the platform.
 
@@ -8,11 +14,11 @@ This deploys the Dependency Track API server into the platform premise, and the 
 It relies on an ingress router and a database in the data plane.
 
 [plantuml]
-----
+....
 @startuml
 User -> UI : Use the UI
 @enduml
-----
+....
 
 == Notes
 
