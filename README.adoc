@@ -13,7 +13,7 @@ This repository contains the deployment definition of the dependency tracker ser
 This deploys the Dependency Track API server into the platform premise, and the UI on the edge.
 It relies on an ingress router and a database in the data plane.
 
-[plantuml]
+[{MERMAID}]
 ....
 @startuml
 User -> UI : Use the UI
